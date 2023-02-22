@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 
 import MainPage from '../components/layout/MainPage'
+import TodoTimer from '../pages/TodoTimer'
 
 export default createBrowserRouter([
   {
@@ -16,6 +17,10 @@ export default createBrowserRouter([
       {
         path: "/about",
         element: <div>About</div>,
+      },
+      {
+        path: "/todo",
+        element: <TodoTimer />,
       }
     ]
   },
