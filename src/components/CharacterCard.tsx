@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 
 import { Character } from '../types'
+import { IconArrowDown } from './icons/IconArrowDown'
 
 export default function CharacterCard({ character }: { character: Character }) {
   const [collapsed, setCollapsed] = useState(true)
@@ -16,8 +17,11 @@ export default function CharacterCard({ character }: { character: Character }) {
 
         {character.comics.items.length > 0 && (
           <div className="flex flex-col duration-300 cursor-pointer">
-            <p className="px-6 py-1 flex justify-between text-white mt-2 font-bold bg-red-400 rounded select-none" onClick={() => setCollapsed(!collapsed)}>
-              Comics <span>{collapsed ? '+' : '-'}</span>
+            <p className="px-6 py-1 flex justify-between items-center text-white mt-2 font-bold bg-red-400 rounded select-none" onClick={() => setCollapsed(!collapsed)}>
+              Comics{' '}
+              <span>
+                <IconArrowDown className={collapsed ? 'rotate-0 w-6 h-6 transition-all duration-300' : '-rotate-180 w-6 h-6 transition-all duration-300'} />
+              </span>
             </p>
             {/* collapsable list of comics */}
             {collapsed ? (
@@ -25,8 +29,10 @@ export default function CharacterCard({ character }: { character: Character }) {
             ) : (
               <div className="flex flex-col">
                 {character.comics.items.map((comic) => (
-                  <div key={comic.name} className="flex flex-row">
-                    <Link to={`/comic/${comic.resourceURI.split('/').at(-1)}`}>{comic.name}</Link>
+                  <div key={comic.name} className="flex flex-row mt-2">
+                    <Link className="block w-full hover:bg-gray-50 pt-1 decoration-none hover:text-red-400 text-black" to={`/comics/${comic.resourceURI.split('/').at(-1)}`}>
+                      {comic.name}
+                    </Link>
                   </div>
                 ))}
               </div>
