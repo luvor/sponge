@@ -4,6 +4,8 @@ import MainPage from '../components/layout/MainPage'
 
 import HomePage from '../pages/HomePage'
 import TodoTimer from '../pages/TodoTimer'
+import CharacterDetailPage from '../pages/characters/CharacterDetailPage'
+import ComicsDetailPage from '../pages/comics/ComicsDetailPage'
 
 export default createBrowserRouter([
   {
@@ -21,6 +23,14 @@ export default createBrowserRouter([
       {
         path: '/todo',
         element: <TodoTimer />,
+      },
+      {
+        path: '/character/:id',
+        element: <CharacterDetailPage />,
+      },
+      {
+        path: '/comics/:id',
+        element: <ComicsDetailPage />,
       },
     ],
   },

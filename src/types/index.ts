@@ -1,1 +1,2 @@
-export * from './marvel'
+export * from './Characters'
+export * from './Comics'
