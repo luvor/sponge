@@ -1,28 +1,27 @@
-import {
-  createBrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom'
 
 import MainPage from '../components/layout/MainPage'
+
+import HomePage from '../pages/HomePage'
 import TodoTimer from '../pages/TodoTimer'
 
 export default createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <MainPage />,
     children: [
       {
-        path: "/",
-        element: <div>Home</div>,
+        path: '/',
+        element: <HomePage />,
       },
       {
-        path: "/about",
+        path: '/about',
         element: <div>About</div>,
       },
       {
-        path: "/todo",
+        path: '/todo',
         element: <TodoTimer />,
-      }
-    ]
+      },
+    ],
   },
-  
-]);
+])
