@@ -13,6 +13,10 @@ class MarvelService {
   getComicsById(id: number) {
     return api.get(`/comics/${id}`)
   }
+
+  getStories() {
+    return api.get('/stories')
+  }
 }
 
 export default new MarvelService()
