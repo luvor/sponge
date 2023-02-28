@@ -8,7 +8,7 @@ export default function CharacterCard({ character }: { character: Character }) {
   const [collapsed, setCollapsed] = useState(true)
   return (
     <Link className="decoration-none text-black" to={`/character/${character.id}`}>
-      <div className="border max-w-[300px] animate-bounce-alt animate-count-1 animate-duration-1s shadow-md rounded-md overflow-hidden border-gray-100 mb-4">
+      <div className="border-1px border-solid hover:shadow-lg hover:border-red-300 duration-300 max-w-[300px] animate-bounce-alt animate-count-1 animate-duration-1s shadow-md rounded-md overflow-hidden border-transparent mb-4">
         <img className="max-w-full" src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
         <div className="p-2">
           <h2 className="text-xl font-bold">{character.name}</h2>
@@ -17,7 +17,14 @@ export default function CharacterCard({ character }: { character: Character }) {
 
           {character.comics.items.length > 0 && (
             <div className="flex flex-col duration-300 cursor-pointer">
-              <p className="px-6 py-1 flex justify-between items-center text-white mt-2 font-bold bg-red-400 rounded select-none" onClick={() => setCollapsed(!collapsed)}>
+              <p
+                className="px-6 py-1 flex justify-between items-center text-white mt-2 font-bold bg-red-400 rounded select-none"
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  setCollapsed(!collapsed)
+                }}
+              >
                 Comics{' '}
                 <span>
                   <IconArrowDown className={collapsed ? 'rotate-0 w-6 h-6 transition-all duration-300' : '-rotate-180 w-6 h-6 transition-all duration-300'} />

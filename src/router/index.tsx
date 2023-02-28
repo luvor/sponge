@@ -3,8 +3,10 @@ import { createBrowserRouter } from 'react-router-dom'
 import MainPage from '../components/layout/MainPage'
 
 import HomePage from '../pages/HomePage'
+import AboutPage from '../pages/AboutPage'
 import TodoTimer from '../pages/TodoTimer'
 import CharacterDetailPage from '../pages/characters/CharacterDetailPage'
+import ComicsListPage from '../pages/comics/ComicsListPage'
 import ComicsDetailPage from '../pages/comics/ComicsDetailPage'
 
 export default createBrowserRouter([
@@ -18,7 +20,7 @@ export default createBrowserRouter([
       },
       {
         path: '/about',
-        element: <div>About</div>,
+        element: <AboutPage />,
       },
       {
         path: '/todo',
@@ -27,6 +29,10 @@ export default createBrowserRouter([
       {
         path: '/character/:id',
         element: <CharacterDetailPage />,
+      },
+      {
+        path: '/comics',
+        element: <ComicsListPage />,
       },
       {
         path: '/comics/:id',

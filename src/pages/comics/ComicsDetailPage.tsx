@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import MarvelService from '../../services/MarvelService'
 
@@ -38,9 +38,9 @@ export default function ComicsDetailPage() {
                 {comics.characters &&
                   comics.characters.items.map((character: CharacterSummary) => (
                     <div key={character.name} className="flex flex-row mt-2">
-                      <a className="block w-full hover:bg-gray-50 pt-1 decoration-none hover:text-red-400 text-black" href={`/characters/${character.resourceURI.split('/').at(-1)}`}>
+                      <Link className="block w-full hover:bg-gray-50 pt-1 decoration-none hover:text-red-400 text-black" to={`/character/${character.resourceURI.split('/').at(-1)}`}>
                         {character.name}
-                      </a>
+                      </Link>
                     </div>
                   ))}
               </div>
