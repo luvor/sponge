@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import MainPage from '../components/layout/MainPage'
 
 import HomePage from '../pages/HomePage'
+import ErrorPage from '../pages/ErrorPage'
 import AboutPage from '../pages/AboutPage'
 import TodoTimer from '../pages/TodoTimer'
 import CharacterDetailPage from '../pages/characters/CharacterDetailPage'
@@ -13,6 +14,7 @@ export default createBrowserRouter([
   {
     path: '/',
     element: <MainPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',

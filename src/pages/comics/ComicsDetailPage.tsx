@@ -19,10 +19,10 @@ export default function ComicsDetailPage() {
   return (
     <div>
       {comics && (
-        <div className="p-4 max-w-full">
+        <div className="p-4 w-full">
           <h1 className="text-2xl font-bold mb-4">{comics.title}</h1>
           <div className="flex justify-between">
-            <img src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`} alt={comics.title} className="w-1/2" />
+            <img src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`} alt={comics.title} className="max-w-1/2" />
             <div className="flex flex-col grow-2 px-6">
               <p>{comics.description}</p>
               <p>Цена: {comics.prices[0].price} $</p>
