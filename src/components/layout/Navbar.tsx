@@ -17,6 +17,9 @@ function App() {
       <NavLink to="/todo" className={({ isActive }) => (isActive ? linkStyle + ' ' + activeLinkStyle : linkStyle)}>
         Todo-лист
       </NavLink>
+      <NavLink to="/cart" className={({ isActive }) => (isActive ? linkStyle + ' ' + activeLinkStyle : linkStyle)}>
+        Корзина
+      </NavLink>
     </nav>
   )
 }

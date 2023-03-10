@@ -9,6 +9,7 @@ import TodoTimer from '../pages/TodoTimer'
 import CharacterDetailPage from '../pages/characters/CharacterDetailPage'
 import ComicsListPage from '../pages/comics/ComicsListPage'
 import ComicsDetailPage from '../pages/comics/ComicsDetailPage'
+import CartPage from '../pages/cart/CartPage'
 
 export default createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export default createBrowserRouter([
       {
         path: '/comics/:id',
         element: <ComicsDetailPage />,
+      },
+      {
+        path: '/cart',
+        element: <CartPage />,
       },
     ],
   },
